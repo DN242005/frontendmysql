@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumo de REST-API de Usuarios</title>
+</head>
+
+<body>
+
+  <h1>Consumo de REST-API de Usuarios</h1>
+
+  <!-- Formulario para agregar usuario -->
+  <form id="userForm">
+    <label>Name</label>
+    <input type="text" id="name" required>
+    <label>Email</label>
+    <input type="email" id="email" required>
+    <label>Age</label>
+    <input type="number" id="age" required>
+    <label>Comments</label>
+    <input type="text" id="comments">
+    <button type="submit">POST user</button>
+  </form>
+
+  <br>
+
+  <!-- Botón GET usuarios -->
+  <button id="getUsersBtn">GET usuarios</button>
+
+  <br><br>
+
+  <!-- Tabla de usuarios -->
+  <table id="usersTable" border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Edad</th>
+        <th>Comentarios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se insertarán los usuarios -->
+    </tbody>
+  </table>
+
+  <!-- Tu archivo de JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
