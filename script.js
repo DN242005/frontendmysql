@@ -1,17 +1,14 @@
 const API_URL = 'https://apimysql-production-6a17.up.railway.app/api/users';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Solo configurar eventos
-
-  // Evento para el POST (agregar usuario)
+  // Evento para agregar usuario (POST)
   document.getElementById('userForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    await addUser(); // Solo guarda
-    document.getElementById('userForm').reset(); // Limpia el formulario
-    // NO hacemos fetchUsers aquí
+    await addUser();
+    document.getElementById('userForm').reset();
   });
 
-  // Evento para el GET (mostrar usuarios)
+  // Evento para obtener usuarios (GET)
   document.getElementById('getUsersBtn').addEventListener('click', fetchUsers);
 });
 
@@ -19,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchUsers() {
   try {
     const response = await fetch(API_URL);
-    const users = await response.json();
+    const data = await response.json(); // 👈🏻 AQUÍ cambió
+    const users = data.users;            // 👈🏻 EXTRAER el array users
 
     const tableBody = document.querySelector('#usersTable tbody');
     tableBody.innerHTML = '';
