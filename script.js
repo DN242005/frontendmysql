@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8081/api/users';
+const API_URL = 'https://apimysql-production-6a17.up.railway.app/api/users';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Solo configurar eventos
